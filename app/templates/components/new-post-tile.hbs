@@ -1,3 +1,4 @@
+<!-- form for creating a new post, hidden initially, with if statements checking if newPostFormShowing is true or false, from admin.hbs to new-post-tile.js -->
 {{#if newPostFormShowing}}
   <form class="form-group">
     <label for="blog_author">Blog Author</label>
@@ -16,7 +17,7 @@
     {{input value=episode_title id="episode_title"}}
 
     <label for="air_date">Air Date</label>
-    {{input value=air-date id="air-date"}}
+    {{input value=air_date id="air_date"}}
 
     <label for="url">URL</label>
     {{input value=url id="url"}}

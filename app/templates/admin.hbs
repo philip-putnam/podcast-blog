@@ -1,7 +1,9 @@
+<!-- Renders new-post-tile.hbs depending on if newPostFormShowing is true or false -->
 {{new-post-tile savePost="savePost"}}
 
+<!-- Renders update-delete.hbs for admin delete/update, passes through data updatePost and destroyPost to database -->
 <ul>
   {{#each model as |post|}}
-  <li>{{post.podcast_title}}, {{post.air_date}}</li>
+  {{update-delete post=post destroyPost="destroyPost"}}
   {{/each}}
 </ul>
