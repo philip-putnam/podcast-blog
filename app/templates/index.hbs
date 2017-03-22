@@ -1,6 +1,4 @@
-<!-- Loop through each post (contained in model index.js) object as 'post' and display  'post' property values -->
+<!-- Loop through each post (contained in model index.js) object as 'post' -->
 {{#each model as |post|}}
-  <div class='col-md-3'>
-    <img src={{post.logo}}> <h3>{{post.podcast_title}}</h3> <p>{{post.blog_author}}, {{post.air_date}}</p>
-  </div>
+  {{blog-tile post=post}}
 {{/each}}

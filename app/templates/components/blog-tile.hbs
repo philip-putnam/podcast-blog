@@ -1,0 +1,8 @@
+<!-- Display a 'post' object and properties from index.hbs -->
+<div class='col-md-3'>
+  <img src={{post.logo}} {{action 'contentShow'}}><h3 {{action 'contentShow'}}>{{post.podcast_title}}</h3> <p><a href={{post.url}}>{{post.episode_title}}</a>, {{post.air_date}}</p>
+  {{#if blogContentShowing}}
+    <p>Posted by: {{post.blog_author}}</p>
+    <p>{{post.blog_content}}</p>
+  {{/if}}
+</div>
