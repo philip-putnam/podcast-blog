@@ -1,3 +1,50 @@
 
 <!-- Renders on admin.hbs, providing update and delete buttons for administrator user -->
-<li>{{post.podcast_title}}, {{post.air_date}} <button class="btn" {{action 'delete' post}}>Delete Post</button></li>
+<li>
+  {{post.podcast_title}}, {{post.air_date}}
+  <button class="btn btn-danger" {{action 'delete' post}}>Delete</button>
+  {{#if updateFormShowing}}
+    <form>
+      <div class="form-group">
+        <label for="blog_author">Blog Author</label>
+        {{input value=post.blog_author id="blog_author"}}
+      </div>
+
+      <div class="form-group">
+        <label for="blog_content">Blog Content</label>
+        {{textarea value=post.blog_content id="blog_content"}}
+      </div>
+
+      <div class="form-group">
+        <label for="podcast_title">Podcast Title</label>
+        {{input value=post.podcast_title id="podcast_title"}}
+      </div>
+
+      <div class="form-group">
+        <label for="logo">Blog Logo</label>
+        {{input value=post.logo id="logo"}}
+      </div>
+
+      <div class="form-group">
+        <label for="episode_title">Episode Title</label>
+        {{input value=post.episode_title id="episode_title"}}
+      </div>
+
+      <div class="form-group">
+        <label for="air_date">Air Date</label>
+        {{input value=post.air_date id="air_date"}}
+      </div>
+
+      <div class="form-group">
+        <label for="url">URL</label>
+        {{input value=post.url id="url"}}
+      </div>
+
+      <button class="btn btn-warning" {{action 'update' post}}>Update</button>
+    </form>
+
+    <button class="btn" {{action 'toggleUpdateForm'}}>Hide Form</button>
+  {{else}}
+    <button class="btn btn-warning" {{action 'toggleUpdateForm'}}>Update</button>
+  {{/if}}
+</li>

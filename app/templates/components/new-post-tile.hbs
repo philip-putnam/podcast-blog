@@ -1,26 +1,41 @@
 <!-- form for creating a new post, hidden initially, with if statements checking if newPostFormShowing is true or false, from admin.hbs to new-post-tile.js -->
 {{#if newPostFormShowing}}
-  <form class="form-group">
-    <label for="blog_author">Blog Author</label>
-    {{input value=blog_author id="blog_author"}}
+  <form>
+    <div class="form-group">
+      <label for="blog_author">Blog Author</label>
+      {{input value=blog_author id="blog_author"}}
+    </div>
 
-    <label for="blog_content">Blog Content</label>
-    {{input value=blog_content id="blog_content"}}
+    <div class="form-group">
+      <label for="blog_content">Blog Content</label>
+      {{textarea value=blog_content id="blog_content"}}
+    </div>
 
-    <label for="podcast_title">Podcast Title</label>
-    {{input value=podcast_title id="podcast_title"}}
+    <div class="form-group">
 
-    <label for="logo">Blog Logo</label>
-    {{input value=logo id="logo"}}
+      <label for="podcast_title">Podcast Title</label>
+      {{input value=podcast_title id="podcast_title"}}
+    </div>
 
-    <label for="episode_title">Episode Title</label>
-    {{input value=episode_title id="episode_title"}}
+    <div class="form-group">
+      <label for="logo">Blog Logo</label>
+      {{input value=logo id="logo"}}
+    </div>
 
-    <label for="air_date">Air Date</label>
-    {{input value=air_date id="air_date"}}
+    <div class="form-group">
+      <label for="episode_title">Episode Title</label>
+      {{input value=episode_title id="episode_title"}}
+    </div>
 
-    <label for="url">URL</label>
-    {{input value=url id="url"}}
+    <div class="form-group">
+      <label for="air_date">Air Date</label>
+      {{input value=air_date id="air_date"}}
+    </div>
+
+    <div class="form-group">
+      <label for="url">URL</label>
+      {{input value=url id="url"}}
+    </div>
 
     <button class="btn" {{action 'savePost'}}>Publish Post</button>
   </form>
