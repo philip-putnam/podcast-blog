@@ -10,6 +10,8 @@ Router.map(function() {
   this.route('about');
   this.route('contact');
   this.route('admin');
+  // add DS id to URL to make it unique
+  this.route('entry', {path: '/entry/:post_id'});
 });
 
 export default Router;

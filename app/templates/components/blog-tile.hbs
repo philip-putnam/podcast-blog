@@ -4,5 +4,7 @@
   {{#if blogContentShowing}}
     <p>Posted by: {{post.blog_author}}</p>
     <p>{{post.blog_content}}</p>
+    {{#link-to 'entry' post.id}}Read More...{{/link-to}}
   {{/if}}
+
 </div>

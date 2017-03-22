@@ -7,37 +7,37 @@
     <form>
       <div class="form-group">
         <label for="blog_author">Blog Author</label>
-        {{input value=post.blog_author id="blog_author"}}
+        {{input value=post.blog_author}}
       </div>
 
       <div class="form-group">
         <label for="blog_content">Blog Content</label>
-        {{textarea value=post.blog_content id="blog_content"}}
+        {{textarea value=post.blog_content id=post.blog_content}}
       </div>
 
       <div class="form-group">
         <label for="podcast_title">Podcast Title</label>
-        {{input value=post.podcast_title id="podcast_title"}}
+        {{input value=post.podcast_title}}
       </div>
 
       <div class="form-group">
         <label for="logo">Blog Logo</label>
-        {{input value=post.logo id="logo"}}
+        {{input value=post.logo}}
       </div>
 
       <div class="form-group">
         <label for="episode_title">Episode Title</label>
-        {{input value=post.episode_title id="episode_title"}}
+        {{input value=post.episode_title}}
       </div>
 
       <div class="form-group">
         <label for="air_date">Air Date</label>
-        {{input value=post.air_date id="air_date"}}
+        {{input value=post.air_date}}
       </div>
 
       <div class="form-group">
         <label for="url">URL</label>
-        {{input value=post.url id="url"}}
+        {{input value=post.url id=post.url}}
       </div>
 
       <button class="btn btn-warning" {{action 'update' post}}>Update</button>
