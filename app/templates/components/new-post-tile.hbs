@@ -1,0 +1,29 @@
+{{#if newPostFormShowing}}
+  <form class="form-group">
+    <label for="blog_author">Blog Author</label>
+    {{input value=blog_author id="blog_author"}}
+
+    <label for="blog_content">Blog Content</label>
+    {{input value=blog_content id="blog_content"}}
+
+    <label for="podcast_title">Podcast Title</label>
+    {{input value=podcast_title id="podcast_title"}}
+
+    <label for="logo">Blog Logo</label>
+    {{input value=logo id="logo"}}
+
+    <label for="episode_title">Episode Title</label>
+    {{input value=episode_title id="episode_title"}}
+
+    <label for="air_date">Air Date</label>
+    {{input value=air-date id="air-date"}}
+
+    <label for="url">URL</label>
+    {{input value=url id="url"}}
+
+    <button class="btn" {{action 'savePost'}}>Publish Post</button>
+  </form>
+  <button class="btn" {{action 'toggleFormShowing'}}>Hide Form</button>
+{{else}}
+  <button class="btn" {{action 'toggleFormShowing'}}>Create New Post</button>
+{{/if}}
