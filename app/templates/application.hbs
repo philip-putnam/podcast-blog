@@ -1,4 +1,13 @@
-{{#link-to 'index'}}Home{{/link-to}}
-{{#link-to 'about'}}About{{/link-to}}
-{{#link-to 'contact'}}Contact{{/link-to}}
-{{outlet}}
+<div class='well'>
+  <h2>Podcast Blog</h2>
+  {{#link-to 'index'}}Home{{/link-to}}
+  {{#link-to 'about'}}About{{/link-to}}
+  {{#link-to 'contact'}}Contact{{/link-to}}
+  {{#link-to 'admin'}}Admin{{/link-to}}
+</div>
+
+<div class='container'>
+  <div class='row'>
+    {{outlet}}
+  </div>
+</div>
