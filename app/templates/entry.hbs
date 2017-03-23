@@ -1,13 +1,13 @@
 <h2>Blog Entry:</h2>
 {{blog-entry post=model.post}}
 
-<h3>Trollin Section</h3>
+<h3>Trollin' Section:</h3>
 {{comment-tile post=model.post comment=comment save="save"}}
 
 {{#each model.post.comments as |comment|}}
   <div class="col-md-12">
     <div class="well">
-      <p>{{comment.author}}, {{comment.date}}</p>
+      <p>Comment by {{comment.author}} on {{comment.date}}</p>
       <p>{{comment.content}}</p>
     </div>
   </div>

@@ -18,9 +18,15 @@ export default Ember.Route.extend({
     },
     // sends action up to model DB to delete a post from DB
     destroyPost(post) {
-      post.destroyRecord();
+      var review_deletions = post.get('comments').map(function(comment) {
+        return comment.destroyRecord();
+      });
+      Ember.RSVP.all(review_deletions).then(function() {
+        return post.destroyRecord();
+      });
       this.transitionTo('admin');
     },
+    // Update post record in DB
     update(post, params) {
       Object.keys(params).forEach(function(key) {
         if( params[key]!==undefined) {
@@ -30,6 +36,7 @@ export default Ember.Route.extend({
       post.save();
       this.transitionTo('admin');
     },
+    // Delete comment record in DB
     destroyComment(comment) {
       comment.destroyRecord();
       this.transitionTo('admin');
