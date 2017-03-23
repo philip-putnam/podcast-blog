@@ -1,2 +1,6 @@
 <h2>Blog Entry:</h2>
-{{blog-entry post=model}}
+{{blog-entry post=model.post}}
+
+{{#each model.comment as |comment|}}
+  {{comment-tile comment=comment}}
+{{/each}}
