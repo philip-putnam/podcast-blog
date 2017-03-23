@@ -3,7 +3,14 @@
 
 <!-- Renders update-delete.hbs for admin delete/update, passes through data updatePost and destroyPost to database -->
 <ul>
-  {{#each model as |post|}}
+  {{#each model.post as |post|}}
   {{update-delete post=post destroyPost="destroyPost" update="update"}}
+  {{/each}}
+</ul>
+
+
+<ul>
+  {{#each model.comment as |comment|}}
+    {{delete-comment comment=comment destroyComment="destroyComment"}}
   {{/each}}
 </ul>

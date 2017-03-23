@@ -3,7 +3,10 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model() {
     // Query DB and allows access to to post records
-    return this.store.findAll('post');
+    return Ember.RSVP.hash({
+      post: this.store.findAll('post'),
+      comment: this.store.findAll('comment')
+    });
   },
   // Sending data through admin.js, creating new record in data store
   actions: {
@@ -25,6 +28,10 @@ export default Ember.Route.extend({
         }
       });
       post.save();
+      this.transitionTo('admin');
+    },
+    destroyComment(comment) {
+      comment.destroyRecord();
       this.transitionTo('admin');
     }
   }
