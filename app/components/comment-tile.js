@@ -7,8 +7,8 @@ export default Ember.Component.extend({
         author: this.get('author'),
         content: this.get('content'),
         date: this.get('date'),
+        post: this.get('post')
       };
-      console.log(this);
       this.sendAction('save', params);
     }
   }

@@ -7,5 +7,6 @@ export default DS.Model.extend({
     logo: DS.attr(),
     episode_title: DS.attr(),
     air_date: DS.attr(),
-    url: DS.attr()
+    url: DS.attr(),
+    comments: DS.hasMany('comment', { async: true })
 });
