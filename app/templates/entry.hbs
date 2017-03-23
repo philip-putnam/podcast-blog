@@ -1,6 +1,14 @@
 <h2>Blog Entry:</h2>
 {{blog-entry post=model.post}}
 
+<h3>Trollin Section</h3>
+{{comment-tile comment=comment}}
+
 {{#each model.comment as |comment|}}
-  {{comment-tile comment=comment}}
+  <div class="col-md-12">
+    <div class="well">
+      <p>{{comment.author}}, {{comment.date}}</p>
+      <p>{{comment.content}}</p>
+    </div>
+  </div>
 {{/each}}
