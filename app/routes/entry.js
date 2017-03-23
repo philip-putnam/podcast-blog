@@ -7,4 +7,12 @@ export default Ember.Route.extend({
       comment: this.store.findAll('comment')
     });
   },
+  actions: {
+    save(params) {
+      console.log(params);
+      var newComment = this.store.createRecord('comment', params);
+      newComment.save();
+      this.transitionTo('entry');
+    }
+  }
 });

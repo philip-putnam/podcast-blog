@@ -8,7 +8,6 @@ export default Ember.Route.extend({
   // Sending data through admin.js, creating new record in data store
   actions: {
     savePost(params) {
-      console.log(params);
       var newPost = this.store.createRecord('post', params);
       newPost.save();
       // Redirects to 'admin' route
